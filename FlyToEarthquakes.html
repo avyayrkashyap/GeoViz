@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>The Great Sichuan Earthquake: How it came to be</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Old+Standard+TT:300,400,600,700,800|Merriweather:300,400,600,700,800');
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+ 
+ 
+<style>
+
+	h1{
+		font-size: 30pt;
+		font-family: 'Merriweather', sans-serif;
+	}
+	
+	h3{
+		font-size: 18pt;
+		font-family: 'Merriweather', sans-serif;
+	}
+	
+#map {
+position: fixed;
+width:50%;
+}
+#features {
+width: 50%;
+margin-left: 50%;
+font-family: sans-serif;
+overflow-y: scroll;
+	color: #f0f0f0;
+background-color: #121212;
+}
+section {
+padding:  25px 50px;
+line-height: 25px;
+border-bottom: 1px solid #ddd;
+opacity: 0.25;
+font-size: 12pt;
+	font-family: "alegreya", Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+}
+section.active {
+opacity: 1;
+}
+section:last-child {
+border-bottom: none;
+margin-bottom: 200px;
+}
+</style>
+ 
+<div id='map'></div>
+<div id='features'>
+<section id='beginning' class='active'>
+  <h1>Of Lakes and Quakes</h1>
+  <p>Humans have reached a level of engineering wizardry that is now allowing for the change of natural landscapes. We can create lakes when and where we want, or make them disappear at our will. But this can, at times, lead to perils that are more often than not, unforeseen. This is a cautionary tale, a tale to be told when Icarus gets too close to the Sun, a tale we will hopefully learn from, sooner rather than later.</p>
+</section>
+<section id='Chengdu'>
+<h3>The Beginning</h3>
+<p>Our story has its roots in Chengdu, a city located in the Sichuan region of China. Chengdu is the capital of the Sichuan province, with a long and storied history. On one fateful day in 2008, the twelfth of May, this city bore witness to a massive earthquake that killed tens of thousands of people and injured many more.</p>
+</section>
+<section id='theearthquake'>
+<h3>M=7.9</h3>
+<p>At twenty eight minutes past six, on the twelfth of May, 2008, an earthquake of magnitude 7.9 was recorded. This quake was just beginning of a series of 125 quakes above 4.5 magnitude recorded that day.</p>
+</section>
+<section id='fallout'>
+<h3>The Fallout</h3>
+<p>Shown in <span style="color: #FFB600">yellow</span>, are the aftershocks that followed on the 12th of May. The aftershocks of the earthquake continued till the 28th of May (shown in <span style="color:#C5C5C5">grey</span>), resulting in more than 220 measurements over magnitude 4.5 being recorded. This also had an effect on the Longmen Shan fault located north-east of the epicentre of the quake.</p>
+</section>
+<section id='gloucester'>
+<h3>Gloucester Road</h3>
+<p>Mycroft responds to Sherlock's telegram and mentions several spies. Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He heads to the nearby Gloucester Road station to investigate and learns that the windows of Caulfield Gardens open over rail tracks where trains stop frequently.</p>
+</section>
+<section id='caulfield-gardens'>
+<h3>13 Caulfield Gardens</h3>
+<p>Holmes deduces that the murderer placed West atop a stopped train at Caulfield Gardens. The train traveled to Aldgate Station before West's body finally toppled off. Backtracking to the criminal's apartment, Holmes finds a series of classified ads from <em>The Daily Telegraph</em> stashed away. All are under the name Pierrot: "Monday night after nine. Two taps. Only ourselves. Do not be so suspicious. Payment in hard cash when goods delivered."</p>
+</section>
+<section id='telegraph'>
+<h3>The Daily Telegraph</h3>
+<p>Holmes and Watson head to The Daily Telegraph and place an ad to draw out the criminal. It reads: "To-night. Same hour. Same place. Two taps. Most vitally important. Your own safety at stake. Pierrot." The trap works and Holmes catches the criminal: Colonel Valentine Walter, the brother of Woolwich Arsenal's chief. He confesses to working for Hugo Oberstein to obtain the submarine plans in order to pay off his debts.</p>
+</section>
+<section id='charing-cross'>
+<h3>Charing Cross Hotel</h3>
+<p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
+<small id="citation">
+Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
+</small>
+</section>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXZ5YXlyayIsImEiOiJjazA2Y3RzYnowMDJpM2pvNG9xeGpxcmdtIn0.JsxCYXnra0fnxsXLW8caHw';
+ 
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/avyayrk/ck0b8yq6u3g4j1cljjtkblhax',
+center: [104.862123, 34.165546],
+zoom: 4,
+bearing: 0,
+pitch: 0
+});
+	
+map.on('load', function () {
+	map.addSource('beforezipingpujson', {
+	type: 'vector',
+	url: 'mapbox://styles/avyayrk/ck0b8yq6u3g4j1cljjtkblhax'
+	});
+	
+	map.addLayer({
+	'id': 'beforezipingpujson',
+	'layout': {
+	'visibility': 'visible'
+	}
+	});
+});
+ 
+var chapters = {
+'beginning': {
+bearing: 0,
+center: [104.862123, 34.165546],
+zoom: 3,
+pitch: 0
+},
+'Chengdu': {
+duration: 3000,
+center: [104.102305, 30.644170],
+bearing: 150,
+zoom: 9,
+pitch: 60,
+},
+
+'theearthquake': {
+bearing: 30,
+center: [103.322, 31.002],
+zoom: 11,
+speed: 0.6,
+pitch: 15
+},
+'fallout': {
+bearing: -30,
+center: [104.722, 32.002],
+zoom: 6.5,
+speed: 0.3
+},
+'gloucester': {
+bearing: 45,
+center: [-0.18335806, 51.49439521],
+zoom: 15.3,
+pitch: 20,
+speed: 0.5
+},
+'caulfield-gardens': {
+bearing: 180,
+center: [-0.19684993, 51.5033856],
+zoom: 12.3
+},
+'telegraph': {
+bearing: 90,
+center: [-0.10669358, 51.51433123],
+zoom: 17.3,
+pitch: 40
+},
+'charing-cross': {
+bearing: 90,
+center: [-0.12416858, 51.50779757],
+zoom: 14.3,
+pitch: 20
+}
+};
+ 
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+var chapterNames = Object.keys(chapters);
+for (var i = 0; i < chapterNames.length; i++) {
+var chapterName = chapterNames[i];
+if (isElementOnScreen(chapterName)) {
+setActiveChapter(chapterName);
+break;
+}
+}
+};
+ 
+var activeChapterName = 'baker';
+function setActiveChapter(chapterName) {
+if (chapterName === activeChapterName) return;
+ 
+map.flyTo(chapters[chapterName]);
+ 
+document.getElementById(chapterName).setAttribute('class', 'active');
+document.getElementById(activeChapterName).setAttribute('class', '');
+ 
+activeChapterName = chapterName;
+}
+ 
+function isElementOnScreen(id) {
+var element = document.getElementById(id);
+var bounds = element.getBoundingClientRect();
+return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+ 
+</script>
+ 
+</body>
+</html>
