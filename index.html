@@ -16,51 +16,75 @@ body { margin:0; padding:0; }
  
  
 <style>
-
+	body{
+		background-color: black;
+		z-index: -2;
+	}
+	
 	h1{
-		font-size: 30pt;
+		font-size: 21pt;
 		font-family: 'Merriweather', sans-serif;
+		color: #B47800;
 	}
 	
 	h3{
-		font-size: 18pt;
+		font-size: 14pt;
 		font-family: 'Merriweather', sans-serif;
+		color: #B47800;
 	}
 	
 #map {
 position: fixed;
-width:50%;
+width:70%;
+z-index: -1;
 }
 #features {
-width: 50%;
-margin-left: 50%;
+width: 30%;
+margin-left: 70%;
 font-family: sans-serif;
 overflow-y: scroll;
 	color: #f0f0f0;
-background-color: #121212;
+background-color: rgba(0,0,0,0.80);
 }
+
+.space{
+height: 55vh;
+	padding-top: 20%;
+}
+
 section {
 padding:  25px 50px;
-line-height: 25px;
-border-bottom: 1px solid #ddd;
+	padding-top: 20%;
+height: 70vh;
+line-height: 20px;
+background-color: linear-gradient(rgba(255,255,255,1), rgba(0,0,0,1));
 opacity: 0.25;
-font-size: 12pt;
-	font-family: "alegreya", Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+font-size: 10pt;
+font-family: "alegreya", Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+transition: 0.6s all;
+	
 }
 section.active {
 opacity: 1;
+height: 70vh;
+transition: 0.4s all;
+	
 }
 section:last-child {
 border-bottom: none;
-margin-bottom: 200px;
+margin-bottom: 10px;
 }
 </style>
  
 <div id='map'></div>
 <div id='features'>
+	
+
 <section id='beginning' class='active'>
-  <h1>Of Lakes and Quakes</h1>
-  <p>Humans have reached a level of engineering wizardry that is now allowing for the change of natural landscapes. We can create lakes when and where we want, or make them disappear at our will. But this can, at times, lead to perils that are more often than not, unforeseen. This is a cautionary tale, a tale to be told when Icarus gets too close to the Sun, a tale we will hopefully learn from, sooner rather than later.</p>
+	
+  <h1 align="center">Of Lakes and Quakes</h1>
+	<H4 align="center">The story of the Great Sichuan Earthquake of 2008</H4>
+  <p align="center">Humans have reached a level of engineering wizardry that is now allowing for the change of natural landscapes. We can create lakes when and where we want, or make them disappear at our will. But this can, at times, lead to perils that are more often than not, unforeseen. This is a cautionary tale, a tale to be told when Icarus gets too close to the Sun, a tale we will hopefully learn from, sooner rather than later.</p>
 </section>
 <section id='Chengdu'>
 <h3>The Beginning</h3>
@@ -74,26 +98,41 @@ margin-bottom: 200px;
 <h3>The Fallout</h3>
 <p>Shown in <span style="color: #FFB600">yellow</span>, are the aftershocks that followed on the 12th of May. The aftershocks of the earthquake continued till the 28th of May (shown in <span style="color:#C5C5C5">grey</span>), resulting in more than 220 measurements over magnitude 4.5 being recorded. This also had an effect on the Longmen Shan fault located north-east of the epicentre of the quake.</p>
 </section>
-<section id='gloucester'>
-<h3>Gloucester Road</h3>
-<p>Mycroft responds to Sherlock's telegram and mentions several spies. Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He heads to the nearby Gloucester Road station to investigate and learns that the windows of Caulfield Gardens open over rail tracks where trains stop frequently.</p>
+<section id='aftermath'>
+<h3>Aftermath</h3>
+<p>Earthquakes became a regular event in this area post 2008. 254 earthquakes have been recorded in the 11 years that have followed. These have been visualised in <span style="color:#dd2222">red</span>.</p>
 </section>
-<section id='caulfield-gardens'>
-<h3>13 Caulfield Gardens</h3>
-<p>Holmes deduces that the murderer placed West atop a stopped train at Caulfield Gardens. The train traveled to Aldgate Station before West's body finally toppled off. Backtracking to the criminal's apartment, Holmes finds a series of classified ads from <em>The Daily Telegraph</em> stashed away. All are under the name Pierrot: "Monday night after nine. Two taps. Only ourselves. Do not be so suspicious. Payment in hard cash when goods delivered."</p>
+<section id='before2008'>
+<h3>Before 2008</h3>
+<p>What was the situation like before this earthquake? Quite peaceful really. There were only 60 earthquakes <span style="font-weight: 800">since 1991</span> before 2008.<br> The blue dots represent the earthquakes that happened before 2008.</p>
 </section>
-<section id='telegraph'>
-<h3>The Daily Telegraph</h3>
-<p>Holmes and Watson head to The Daily Telegraph and place an ad to draw out the criminal. It reads: "To-night. Same hour. Same place. Two taps. Most vitally important. Your own safety at stake. Pierrot." The trap works and Holmes catches the criminal: Colonel Valentine Walter, the brother of Woolwich Arsenal's chief. He confesses to working for Hugo Oberstein to obtain the submarine plans in order to pay off his debts.</p>
+<section id='graph'>
+<h3>A graph to help you understand</h3>
+<img src="Screenshot 2019-09-19 at 11.40.42.png" style="width: 100%">
+	<p>This graph demonstrates the dramatic increase in seismic activities right after 2008. The slope of the graph shows that the number of earthquake occurances. The slope is much greater post 2008. Scientists attribute this to the construction of the Zipingpu Dam over the Puyang river, in the town of Dujiangyan located near the city of Chengdu.</p>
 </section>
-<section id='charing-cross'>
-<h3>Charing Cross Hotel</h3>
-<p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
-<small id="citation">
-Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
+<section id='zipingpu'>
+<h3>Zipingpu Dam</h3>
+<img src="20102807032823.jpg" style="width: 100%">
+<p>The construction of the dam began in the March of 2001. Post its completion in 2003, the dam has held close to 1,120,000,000,000 litres of water. This added stress to the Longmen Shan Fault and increased the seismic activity in the region.</p>
+</section>
+	
+<section id='thus'>
+<h3>And thus...</h3>
+<p>The stress built up till 2008, and was released in the form of a devastating earthquake that claimed the lives of over 68,000 and injured hundreds of thousands of others. The earthquakes are moving towards to the Longmen Shan fault, so we definitely have more to come from this dam.</p>
+</section>
+
+<section id='lastchild'>
+<h3>Conclusion</h3>
+<p>History has shown us, on, multiple occassions, the dangers we put ourselves under by building monuments of this scale.</p><p>This was just an attempt to understand what was clearly a preventable catastrophe, and examining what the aftermath of constructing a behemoth of the likes of the Zipingpu dam would be.</p>
+<div class="space"></div>
+<small id="citation" style="text-decoration: none">
+<p align="right">Made by Avyay<br>
+Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a></p>
 </small>
 </section>
 </div>
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXZ5YXlyayIsImEiOiJjazA2Y3RzYnowMDJpM2pvNG9xeGpxcmdtIn0.JsxCYXnra0fnxsXLW8caHw';
  
@@ -134,7 +173,6 @@ bearing: 150,
 zoom: 9,
 pitch: 60,
 },
-
 'theearthquake': {
 bearing: 30,
 center: [103.322, 31.002],
@@ -148,29 +186,46 @@ center: [104.722, 32.002],
 zoom: 6.5,
 speed: 0.3
 },
-'gloucester': {
+'aftermath': {
+bearing: -30,
+center: [103.5, 32.002],
+zoom: 5.45,
+speed: 0.3
+},
+'before2008': {
+bearing: -30,
+center: [103.9, 32.002],
+zoom: 5.8,
+speed: 0.2,
+pitch:0
+},
+'graph': {
+bearing: 0,
+center: [103.9, 32.002],
+zoom: 6,
+speed: 0.1,
+pitch: 70
+},
+'zipingpu': {
 bearing: 45,
-center: [-0.18335806, 51.49439521],
-zoom: 15.3,
-pitch: 20,
-speed: 0.5
-},
-'caulfield-gardens': {
-bearing: 180,
-center: [-0.19684993, 51.5033856],
-zoom: 12.3
-},
-'telegraph': {
-bearing: 90,
-center: [-0.10669358, 51.51433123],
-zoom: 17.3,
-pitch: 40
-},
-'charing-cross': {
-bearing: 90,
-center: [-0.12416858, 51.50779757],
+center: [103.582607,31.019413],
 zoom: 14.3,
 pitch: 20
+},
+'thus': {
+bearing: -30,
+center: [103.5, 32.002],
+zoom: 5.45,
+speed: 0.3,
+pitch:0
+},
+'lastchild': {
+speed:0.8,
+bearing: 0,
+center: [0,0],
+zoom: 4,
+pitch: 0
+
 }
 };
  
@@ -201,7 +256,7 @@ activeChapterName = chapterName;
 function isElementOnScreen(id) {
 var element = document.getElementById(id);
 var bounds = element.getBoundingClientRect();
-return bounds.top < window.innerHeight && bounds.bottom > 0;
+return bounds.top < window.innerHeight && bounds.bottom > window.innerHeight/2;
 }
  
 </script>
